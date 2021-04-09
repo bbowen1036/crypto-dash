@@ -1,0 +1,11 @@
+## Tech used in app
+- React
+- CSS grid
+- HighCharts
+- CryptoCompare API
+- Async/Await
+- Fuzzy Search
+- Lodash
+- Webkit Inspector
+- Local Storage
+- Google Fonts
