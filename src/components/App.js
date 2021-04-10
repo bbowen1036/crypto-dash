@@ -4,14 +4,15 @@ import React from "react";
 import "./App.css";
 import styled, { css } from "styled-components";
 // Components
+import AppLayout from "./AppLayout";
 import WelcomeMessage from "./WelcomeMessage";
 
 
 function App() {
   return (
-    <div>
+    <AppLayout>
       <WelcomeMessage />
-    </div>
+    </AppLayout>
   );
 }
 
