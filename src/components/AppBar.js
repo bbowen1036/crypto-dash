@@ -1,5 +1,8 @@
+// React
 import React from "react";
 import styled, { css } from "styled-components";
+// Context
+import { AppContext } from "./AppProvider";
 
 const Logo = styled.div`
   font-size: 1.5em;
@@ -8,7 +11,7 @@ const Logo = styled.div`
 const Bar = styled.div`
   display: grid;
   grid-template-columns: 180px auto 100px 100px;
-  margin-bottom: 40px
+  margin-bottom: 40px;
 `;
 
 const ControlButtonElem = styled.div`
@@ -21,12 +24,23 @@ const ControlButtonElem = styled.div`
     `}
 `;
 
-const toProperCase = name => {
-  return name.charAt(0).toUpperCase() + name.slice(1)
+const toProperCase = (name) => {
+  return name.charAt(0).toUpperCase() + name.slice(1);
 };
 
 const ControlButton = ({ name, active }) => {
-  return <ControlButtonElem active={active}>{toProperCase(name)}</ControlButtonElem>;
+  return (
+    <AppContext.Consumer>
+      {({ page, setPage }) => (       // destructuring page, and setPage from the consumer
+        <ControlButtonElem 
+          active={page === name}
+          onClick={() => (setPage(name))}
+        >
+          {toProperCase(name)}
+        </ControlButtonElem>
+      )}
+    </AppContext.Consumer>
+  );
 };
 
 export default function AppBar() {
