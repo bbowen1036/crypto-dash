@@ -9,13 +9,16 @@ import styled, { css } from "styled-components";
 import AppLayout from "./AppLayout";
 import Settings from "../settings";
 import AppBar from "./AppBar";
+import Content from "../shared/Content";
 
 function App() {
   return (
     <AppLayout>
       <AppProvider>
         <AppBar />
-        <Settings />
+        <Content>
+          <Settings />
+        </Content>
       </AppProvider>
     </AppLayout>
   );
