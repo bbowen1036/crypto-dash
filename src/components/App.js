@@ -7,7 +7,7 @@ import "./App.css";
 import styled, { css } from "styled-components";
 // Components
 import AppLayout from "./AppLayout";
-import WelcomeMessage from "./WelcomeMessage";
+import Settings from "../settings";
 import AppBar from "./AppBar";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
     <AppLayout>
       <AppProvider>
         <AppBar />
-        <WelcomeMessage />
+        <Settings />
       </AppProvider>
     </AppLayout>
   );
