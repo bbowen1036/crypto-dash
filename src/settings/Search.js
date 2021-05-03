@@ -49,6 +49,7 @@ function filterCoins(e, setFilteredCoins, coinList) {
   let inputValue = e.target.value;
   if(!inputValue) {   // << fixes bug when user clears search field
     setFilteredCoins(null);  
+    return
   }
   handleFilter(inputValue, coinList, setFilteredCoins)
 }
